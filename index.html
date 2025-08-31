@@ -25,16 +25,14 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline;text-underline-offset:2px}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
-    header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    header{position:sticky;top:0;z-index:10;border-bottom:1px solid transparent;background:linear-gradient(90deg,#0f172a,#1e3a8a 55%,#334155);color:#fff;box-shadow:0 2px 12px rgba(2,6,23,.15)}
     .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .brand{margin-right:auto;font-weight:800;letter-spacing:.2px}
-    .nav a{color:inherit;opacity:.85;padding:6px 8px;border-radius:8px}
-    .nav a:hover{opacity:1;background:color-mix(in srgb,var(--bg) 70%, var(--border))}
-    .hero{display:grid;grid-template-columns:176px 1fr;gap:22px;align-items:center;margin-top:10px}
-    .avatar-wrap{width:176px;height:176px;border-radius:50%;padding:4px;background:
-      conic-gradient(from 180deg, var(--a1), var(--a2), var(--a3), var(--a1));
-      box-shadow:0 8px 24px rgba(2,6,23,.15)}
-    .avatar{width:100%;height:100%;border-radius:50%;display:block;object-fit:cover;border:2px solid var(--bg)}
+    .brand{margin-right:auto;font-weight:800;letter-spacing:.2px;color:#fff}
+    .nav a{color:#fff;opacity:.9;padding:6px 10px;border-radius:8px}
+    .nav a:hover{opacity:1;background:rgba(255,255,255,.08)}
+    .hero{display:grid;grid-template-columns:264px 1fr;gap:26px;align-items:center;margin-top:14px}
+    /* removed ring */
+    .avatar{width:264px;height:264px;border-radius:50%;display:block;object-fit:cover;border:1px solid var(--border);box-shadow:0 10px 26px rgba(2,6,23,.15)}
     h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
     .subtitle{color:var(--muted);margin:4px 0 0}
     main section{margin-top:28px}
@@ -50,7 +48,7 @@
     .chip{font-size:.95rem}
     .chip.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:color-mix(in srgb, var(--a2) 12%, var(--bg));border:1px solid var(--border)}
     footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
-    @media (max-width:720px){ .hero{grid-template-columns:1fr}.avatar-wrap{width:140px;height:140px;justify-self:center} }
+    @media (max-width:720px){ .hero{grid-template-columns:1fr}.avatar{width:220px;height:220px;justify-self:center} }.avatar-wrap{width:140px;height:140px;justify-self:center} }
   </style>
 </head>
 <body>
@@ -59,7 +57,6 @@
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="#top">Filip Milojević</a>
         <a href="#about">About</a>
-        <a href="#publications">Publications</a>
         <a href="#working-papers">Working papers</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -68,20 +65,9 @@
 
   <main id="top" class="wrap">
     <section class="hero" aria-labelledby="name">
-      <div class="avatar-wrap">
-        <img class="avatar" src="assets/profile.jpg" alt="Photo of Filip Milojević" width="512" height="512" loading="eager" decoding="async" />
-      </div>
+      <img class="avatar" src="assets/profile.jpg" alt="Photo of Filip Milojević" width="1024" height="768" loading="eager" decoding="async" />
       <div>
-        <h1 id="name">Filip Milojević</h1>
-        <p class="subtitle">Predoctoral Research Fellow, University of Chicago</p>
-        <p class="muted" style="margin-top:8px">
-          <a class="chip badge" href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">CV</a>
-          <a class="chip badge" href="https://linktr.ee/filipmilojevic" target="_blank" rel="noopener">Links</a>
-        </p>
-      </div>
-    </section>
-
-    <section id="about">
+        <
       <h2>About</h2>
       <p>
         I am a Research Specialist at the Normal Lab, University of Chicago. My work intersects behavioral IO, development economics, and political economy.
@@ -94,9 +80,9 @@
         <div class="entry">
           <h3>Non-User Utility and Market Power: The Case of Smartphones</h3>
           <p class="meta">with Leonardo Bursztyn, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · <span class="muted">Working paper / NBER</span></p>
-          <p class="links">
+          <div class="links">
             <a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a>
-          </p>
+          </div>
         </div>
       </div>
     </section>
@@ -107,12 +93,12 @@
         <div class="entry">
           <h3>Measuring Markets for Network Goods</h3>
           <p class="meta">with Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></p>
+          <div class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></div>
         </div>
         <div class="entry">
           <h3>Algorithmic Amplification and Firm Dynamics</h3>
           <p class="meta">with Maksim Meinert</p>
-          <p class="links"><span class="chip muted">Draft forthcoming</span></p>
+          <div class="links"><span class="chip">Draft forthcoming</span></div>
         </div>
       </div>
     </section>
