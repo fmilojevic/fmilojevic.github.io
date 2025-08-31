@@ -5,230 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filip Milojević — Research</title>
   <meta name="description" content="Personal academic website of Filip Milojević" />
-  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Filip Milojević — Research" />
-  <meta property="og:description" content="Predoctoral Research Fellow, University of Chicago" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/profile.jpg" />
-  <meta property="og:url" content="https://filipmilojevic.github.io" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" as="image" href="assets/profile.jpg" />
   <style>
-    /* ====== Design tokens ====== */
-    :root {
-      --bg: #ffffff;
-      --text: #0f172a; /* slate-900 */
-      --muted: #475569; /* slate-600 */
-      --link: #0f66ff; /* brand blue */
-      --card: #f8fafc; /* slate-50 */
-      --border: #e2e8f0; /* slate-200 */
-      --accent: #111827; /* gray-900 */
-      --shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-      --radius: 14px;
-      --maxw: 860px;
+    /* ===== look & feel inspired by lucamlouzada.github.io: simple, readable, one-column ===== */
+    :root{
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#0f66ff; --border:#e2e8f0; --maxw:760px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220; /* near-navy */
-        --text: #e5edf9;
-        --muted: #9fb0ca;
-        --link: #8bb3ff;
-        --card: #0f172a;
-        --border: #1f2a44;
-        --accent: #e5edf9;
-        --shadow: 0 8px 24px rgba(2, 6, 23, .55);
-      }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --text:#e6eef9; --muted:#9fb0ca; --link:#8bb3ff; --border:#1f2a44; }
     }
 
-    /* ====== Base ====== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: radial-gradient(1200px 800px at 80% -200px, rgba(2, 132, 199, 0.06), transparent 60%),
-                  radial-gradient(900px 600px at -200px 20%, rgba(99, 102, 241, 0.06), transparent 60%),
-                  var(--bg);
-      line-height: 1.65;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 2px; }
-    img { max-width: 100%; display: block; }
-    ::selection { background: rgba(99,102,241,.25); }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline;text-underline-offset:2px}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
 
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px; }
+    /* header */
+    header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .brand{margin-right:auto;font-weight:800;letter-spacing:.2px}
+    .nav a{color:inherit;opacity:.85;padding:6px 8px;border-radius:8px}
+    .nav a:hover{opacity:1;background:color-mix(in srgb,var(--bg) 70%, var(--border))}
 
-    /* ====== Header / Nav ====== */
-    .site-header { position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--bg) 88%, transparent); }
-    .nav { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-    .brand { font-weight: 800; letter-spacing: .2px; margin-right:auto; color: var(--text); }
-    .nav a { color: var(--text); opacity:.8; padding: 10px 12px; border-radius: 10px; }
-    .nav a:hover, .nav a[aria-current="page"] { background: var(--card); opacity:1; }
+    /* hero */
+    .hero{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;margin-top:10px}
+    .avatar{width:88px;height:88px;border-radius:12px;border:1px solid var(--border);object-fit:cover}
+    h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
+    .subtitle{color:var(--muted);margin:4px 0 0}
 
-    /* ====== Hero ====== */
-    .hero { display:grid; grid-template-columns: 120px 1fr; gap: 22px; align-items:center; margin-top: 14px; }
-    .avatar { width:120px; height:120px; border-radius: 16px; object-fit:cover; border:1px solid var(--border); background: var(--card); box-shadow: var(--shadow); }
-    h1 { margin:0; font-size: clamp(1.8rem, 3.2vw + 1rem, 2.4rem); line-height:1.15; letter-spacing: -0.015em; }
-    .subtitle { margin-top: 6px; color: var(--muted); font-size: 1.05rem; }
+    /* content */
+    main section{margin-top:28px}
+    h2{font-size:1.25rem;margin:0 0 10px 0}
+    h3{font-size:1.05rem;margin:16px 0 6px}
+    .muted{color:var(--muted)}
 
-    /* ====== Badges / Buttons ====== */
-    .badges { display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .badge { display:inline-flex; align-items:center; gap:8px; padding: 8px 12px; border:1px solid var(--border); border-radius: 999px; background: var(--card); font-size:.95rem; transition: transform .08s ease, background .2s ease; box-shadow: var(--shadow); }
-    .badge:hover { transform: translateY(-1px); text-decoration:none; }
-    .badge svg { width:16px; height:16px; opacity:.9; }
+    /* list of entries like Luca's: simple blocks */
+    .entries{display:grid;gap:18px}
+    .entry{padding:0 0 6px;border-bottom:1px solid var(--border)}
+    .entry:last-child{border-bottom:none}
+    .meta{color:var(--muted);font-size:.95rem;margin:4px 0 6px}
+    .links{display:flex;gap:12px;flex-wrap:wrap}
+    .chip{font-size:.95rem}
 
-    /* ====== Sections ====== */
-    section { padding-top: 18px; }
-    h2 { font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem); margin: 28px 0 12px; letter-spacing: .2px; }
-    .muted { color: var(--muted); }
+    footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
 
-    /* ====== Papers ====== */
-    .papers { display: grid; gap: 12px; }
-    .paper { position:relative; padding: 16px 18px; border:1px solid var(--border); border-radius: var(--radius); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 88%, transparent), var(--card)); box-shadow: var(--shadow); }
-    .paper h3 { margin: 0 0 6px 0; font-size: 1.05rem; letter-spacing: .1px; }
-    .paper .meta { margin: 0 0 10px; color: var(--muted); font-size: .95rem; }
-    .paper .links { display:flex; gap: 10px; flex-wrap: wrap; }
-    .chip { display:inline-flex; align-items:center; gap:6px; padding: 6px 10px; border:1px solid var(--border); border-radius: 999px; background: var(--bg); font-size:.9rem; }
-    .chip svg { width:14px; height:14px; }
-
-    /* ====== Footer ====== */
-    footer { margin: 46px 0 24px; color: var(--muted); font-size:.95rem; display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap; }
-
-    /* ====== Utilities ====== */
-    .divider { height:1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 24px 0; }
-
-    /* ====== Responsive tweaks ====== */
-    @media (max-width:780px) {
-      .hero { grid-template-columns: 80px 1fr; }
-      .avatar { width:80px; height:80px; border-radius: 12px; }
-      .nav { gap: 6px; }
-      .nav a { padding: 8px 10px; }
-    }
+    @media (max-width:720px){ .hero{grid-template-columns:64px 1fr}.avatar{width:64px;height:64px} }
   </style>
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container">
+  <header>
+    <div class="wrap">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="#top" aria-current="page">Filip Milojević</a>
+        <a class="brand" href="#top">Filip Milojević</a>
         <a href="#about">About</a>
+        <a href="#publications">Publications</a>
         <a href="#working-papers">Working papers</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top" class="container">
-    <!-- Hero -->
+  <main id="top" class="wrap">
+    <!-- hero -->
     <section class="hero" aria-labelledby="name">
-      <img class="avatar" src="assets/profile.jpg" alt="Headshot of Filip Milojević" width="120" height="120" />
+      <img class="avatar" src="assets/profile.jpg" alt="Headshot of Filip Milojević" width="88" height="88" />
       <div>
         <h1 id="name">Filip Milojević</h1>
         <p class="subtitle">Predoctoral Research Fellow, University of Chicago</p>
-        <div class="badges">
-          <a class="badge" href="https://linktr.ee/filipmilojevic" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.06 7.94a1.5 1.5 0 0 1 2.12 0l.88.88a4.5 4.5 0 0 1 0 6.36l-2.83 2.83a4.5 4.5 0 0 1-6.36 0l-.88-.88a1.5 1.5 0 1 1 2.12-2.12l.88.88a1.5 1.5 0 0 0 2.12 0l2.83-2.83a1.5 1.5 0 0 0 0-2.12l-.88-.88a1.5 1.5 0 0 1 0-2.12Z"/></svg>
-            Linktree
-          </a>
-          <a class="badge" href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.5L18.5 9H14V4.5ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Zm0-8h4v2H8V9Z"/></svg>
-            CV (PDF)
-          </a>
+        <p class="muted" style="margin-top:8px">
+          <a href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">CV</a>
+          · <a href="https://linktr.ee/filipmilojevic" target="_blank" rel="noopener">Links</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a Research Specialist at the Normal Lab, University of Chicago. My work intersects behavioral IO, development economics, and political economy.
+      </p>
+    </section>
+
+    <!-- publications (optional like Luca) -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="entries">
+        <div class="entry">
+          <h3>Non-User Utility and Market Power: The Case of Smartphones</h3>
+          <p class="meta">with Leonardo Bursztyn, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · <span class="muted">Working paper / NBER</span></p>
+          <p class="links">
+            <a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="#">Code</a>
+          </p>
         </div>
       </div>
     </section>
 
-    <div class="divider" role="separator" aria-hidden="true"></div>
-
-    <!-- About -->
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p class="muted">I am a Research Specialist at the Normal Lab, University of Chicago. My work intersects behavioral IO, development economics, and political economy.</p>
-    </section>
-
-    <!-- Papers -->
-    <section id="working-papers" aria-labelledby="papers-title">
-      <h2 id="papers-title">Working papers</h2>
-      <div class="papers">
-        <article class="paper" aria-labelledby="p1-title">
-          <h3 id="p1-title">Non-User Utility and Market Power: The Case of Smartphones</h3>
-          <p class="meta">with Leonardo Bursztyn, Rafael Jiménez-Durán, Aaron Leonard, Christopher Roth</p>
-          <div class="links">
-            <a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener" aria-label="NBER Working Paper — opens in new tab">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
-              NBER Working Paper
-            </a>
-          </div>
-        </article>
-
-        <article class="paper" aria-labelledby="p2-title">
-          <h3 id="p2-title">Measuring Markets for Network Goods</h3>
-          <p class="meta">with Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez-Durán, Aaron Leonard, Christopher Roth</p>
-          <div class="links">
-            <a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener" aria-label="NBER Working Paper — opens in new tab">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
-              NBER Working Paper
-            </a>
-          </div>
-        </article>
-
-        <article class="paper" aria-labelledby="p3-title">
-          <h3 id="p3-title">Algorithmic Amplification and Firm Dynamics</h3>
+    <!-- working papers -->
+    <section id="working-papers">
+      <h2>Working papers</h2>
+      <div class="entries">
+        <div class="entry">
+          <h3>Measuring Markets for Network Goods</h3>
+          <p class="meta">with Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · NBER Working Paper</p>
+          <p class="links">
+            <a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a>
+          </p>
+        </div>
+        <div class="entry">
+          <h3>Algorithmic Amplification and Firm Dynamics</h3>
           <p class="meta">with Maksim Meinert</p>
-          <div class="links">
-            <span class="chip" aria-label="Working draft in progress">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16v2H4V4Zm0 4h10v2H4V8Zm0 4h16v2H4v-2Zm0 4h10v2H4v-2Z"/></svg>
-              Draft forthcoming
-            </span>
-          </div>
-        </article>
+          <p class="links"><span class="chip muted">Draft forthcoming</span></p>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p>Email: <a href="mailto:filip.milojevicmuc@gmail.com">filip.milojevicmuc@gmail.com</a></p>
+    <!-- contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:filip.milojevicmuc@gmail.com">filip.milojevicmuc@gmail.com</a></li>
+      </ul>
     </section>
 
     <footer>
-      <span>&copy; <span id="year"></span> Filip Milojević</span>
-      <span>Built with static HTML/CSS • Last updated <time datetime="2025-08-17">Aug 17, 2025</time></span>
+      <p>&copy; <span id="year"></span> Filip Milojević · Last updated <time datetime="2025-08-17">Aug 17, 2025</time>.</p>
     </footer>
   </main>
 
-  <script>
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Active link syncing & reduced-jank hash scrolling focus management
-    const links = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const id = '#' + entry.target.id;
-        const link = links.find(l => l.getAttribute('href') === id);
-        if (link) link.setAttribute('aria-current', entry.isIntersecting ? 'page' : 'false');
-      });
-    }, { rootMargin: '-60% 0px -35% 0px', threshold: 0.01 });
-
-    sections.forEach(s => observer.observe(s));
-
-    // Improve focus on skip-to-section
-    function setFocusOnHash(){
-      const el = document.getElementById(location.hash.replace('#',''));
-      if (!el) return;
-      el.setAttribute('tabindex', '-1');
-      el.focus({ preventScroll: true });
-    }
-    window.addEventListener('hashchange', setFocusOnHash);
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
