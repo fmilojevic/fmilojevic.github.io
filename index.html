@@ -8,14 +8,20 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <style>
     :root{
-      --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#0f66ff; --border:#e2e8f0; --maxw:760px;
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#335cff; --border:#e2e8f0; --maxw:760px;
+      --a1:#6366f1; --a2:#06b6d4; --a3:#22c55e; /* accent hues for subtle life */
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b1220; --text:#e6eef9; --muted:#9fb0ca; --link:#8bb3ff; --border:#1f2a44; }
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
+    body{
+      margin:0;background:
+        radial-gradient(900px 500px at 85% -120px, color-mix(in srgb, var(--a1) 10%, transparent), transparent 60%),
+        radial-gradient(700px 400px at -120px 20%, color-mix(in srgb, var(--a2) 10%, transparent), transparent 60%),
+        var(--bg);
+      color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline;text-underline-offset:2px}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
@@ -24,22 +30,27 @@
     .brand{margin-right:auto;font-weight:800;letter-spacing:.2px}
     .nav a{color:inherit;opacity:.85;padding:6px 8px;border-radius:8px}
     .nav a:hover{opacity:1;background:color-mix(in srgb,var(--bg) 70%, var(--border))}
-    .hero{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center;margin-top:10px}
-    .avatar{width:160px;height:160px;border-radius:50%;border:1px solid var(--border);object-fit:cover}
+    .hero{display:grid;grid-template-columns:176px 1fr;gap:22px;align-items:center;margin-top:10px}
+    .avatar-wrap{width:176px;height:176px;border-radius:50%;padding:4px;background:
+      conic-gradient(from 180deg, var(--a1), var(--a2), var(--a3), var(--a1));
+      box-shadow:0 8px 24px rgba(2,6,23,.15)}
+    .avatar{width:100%;height:100%;border-radius:50%;display:block;object-fit:cover;border:2px solid var(--bg)}
     h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
     .subtitle{color:var(--muted);margin:4px 0 0}
     main section{margin-top:28px}
-    h2{font-size:1.25rem;margin:0 0 10px 0}
+    h2{font-size:1.25rem;margin:0 0 10px 0;position:relative}
+    h2::after{content:"";display:block;height:2px;width:48px;background:linear-gradient(90deg,var(--a1),var(--a2));margin-top:6px;border-radius:2px}
     h3{font-size:1.05rem;margin:16px 0 6px}
     .muted{color:var(--muted)}
     .entries{display:grid;gap:18px}
-    .entry{padding:0 0 6px;border-bottom:1px solid var(--border)}
+    .entry{padding:0 0 10px;border-bottom:1px solid var(--border)}
     .entry:last-child{border-bottom:none}
     .meta{color:var(--muted);font-size:.95rem;margin:4px 0 6px}
     .links{display:flex;gap:12px;flex-wrap:wrap}
     .chip{font-size:.95rem}
+    .chip.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:color-mix(in srgb, var(--a2) 12%, var(--bg));border:1px solid var(--border)}
     footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
-    @media (max-width:720px){ .hero{grid-template-columns:1fr;}.avatar{width:140px;height:140px;justify-self:center} }
+    @media (max-width:720px){ .hero{grid-template-columns:1fr}.avatar-wrap{width:140px;height:140px;justify-self:center} }
   </style>
 </head>
 <body>
@@ -57,13 +68,15 @@
 
   <main id="top" class="wrap">
     <section class="hero" aria-labelledby="name">
-      <img class="avatar" src="profile.jpg" alt="Photo of Filip Milojević" />
+      <div class="avatar-wrap">
+        <img class="avatar" src="assets/profile.jpg" alt="Photo of Filip Milojević" width="512" height="512" loading="eager" decoding="async" />
+      </div>
       <div>
         <h1 id="name">Filip Milojević</h1>
         <p class="subtitle">Predoctoral Research Fellow, University of Chicago</p>
         <p class="muted" style="margin-top:8px">
-          <a href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">CV</a>
-          · <a href="https://linktr.ee/filipmilojevic" target="_blank" rel="noopener">Links</a>
+          <a class="chip badge" href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="chip badge" href="https://linktr.ee/filipmilojevic" target="_blank" rel="noopener">Links</a>
         </p>
       </div>
     </section>
