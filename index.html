@@ -8,47 +8,50 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <style>
     :root{
-      --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#335cff; --border:#e2e8f0; --maxw:760px;
-      --a1:#6366f1; --a2:#06b6d4; --a3:#22c55e; /* accent hues for subtle life */
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#1d4ed8; --border:#e2e8f0; --maxw:760px;
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b1220; --text:#e6eef9; --muted:#9fb0ca; --link:#8bb3ff; --border:#1f2a44; }
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;background:
-        radial-gradient(900px 500px at 85% -120px, color-mix(in srgb, var(--a1) 10%, transparent), transparent 60%),
-        radial-gradient(700px 400px at -120px 20%, color-mix(in srgb, var(--a2) 10%, transparent), transparent 60%),
-        var(--bg);
-      color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline;text-underline-offset:2px}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
-    header{position:sticky;top:0;z-index:10;border-bottom:1px solid transparent;background:linear-gradient(90deg,#0f172a,#1e3a8a 55%,#334155);color:#fff;box-shadow:0 2px 12px rgba(2,6,23,.15)}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      border-bottom:1px solid var(--border);
+      background:#334155;
+      color:#fff;
+    }
     .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .brand{margin-right:auto;font-weight:800;letter-spacing:.2px;color:#fff}
-    .nav a{color:#fff;opacity:.9;padding:6px 10px;border-radius:8px}
-    .nav a:hover{opacity:1;background:rgba(255,255,255,.08)}
+    .nav a{color:#fff;opacity:.9;padding:6px 10px;border-radius:6px}
+    .nav a:hover{opacity:1;background:rgba(255,255,255,.1)}
+
     .hero{display:grid;grid-template-columns:264px 1fr;gap:26px;align-items:center;margin-top:14px}
-    /* removed ring */
-    .avatar{width:264px;height:264px;border-radius:50%;display:block;object-fit:cover;border:1px solid var(--border);box-shadow:0 10px 26px rgba(2,6,23,.15)}
+    .avatar{width:264px;height:264px;border-radius:50%;display:block;object-fit:cover;border:1px solid var(--border);box-shadow:0 6px 18px rgba(2,6,23,.12)}
+
     h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
     .subtitle{color:var(--muted);margin:4px 0 0}
+
     main section{margin-top:28px}
-    h2{font-size:1.25rem;margin:0 0 10px 0;position:relative}
-    h2::after{content:"";display:block;height:2px;width:48px;background:linear-gradient(90deg,var(--a1),var(--a2));margin-top:6px;border-radius:2px}
+    h2{font-size:1.25rem;margin:0 0 10px 0}
     h3{font-size:1.05rem;margin:16px 0 6px}
     .muted{color:var(--muted)}
+
     .entries{display:grid;gap:18px}
     .entry{padding:0 0 10px;border-bottom:1px solid var(--border)}
     .entry:last-child{border-bottom:none}
     .meta{color:var(--muted);font-size:.95rem;margin:4px 0 6px}
     .links{display:flex;gap:12px;flex-wrap:wrap}
     .chip{font-size:.95rem}
-    .chip.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:color-mix(in srgb, var(--a2) 12%, var(--bg));border:1px solid var(--border)}
+
     footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
-    @media (max-width:720px){ .hero{grid-template-columns:1fr}.avatar{width:220px;height:220px;justify-self:center} }.avatar-wrap{width:140px;height:140px;justify-self:center} }
+
+    @media (max-width:720px){ .hero{grid-template-columns:1fr}.avatar{width:220px;height:220px;justify-self:center} }
   </style>
 </head>
 <body>
@@ -67,39 +70,42 @@
     <section class="hero" aria-labelledby="name">
       <img class="avatar" src="assets/profile.jpg" alt="Photo of Filip Milojević" width="1024" height="768" loading="eager" decoding="async" />
       <div>
-        <
-      <h2>About</h2>
-      <p>
-        I am a Research Specialist at the Normal Lab, working with Professor Leonardo Bursztyn. I was previously at LSE, where I obtained a Master's in Econometrics and Mathematical Economics (EME) and LMU Munich from where I hold a BSc in Economics. 
-        My work intersects behavioral IO, development economics, and political economy.
-      </p>
+        <h1 id="name">Filip Milojević</h1>
+        <p class="subtitle">Predoctoral Research Fellow, University of Chicago</p>
+        <p class="muted" style="margin-top:8px">
+          <a class="chip" href="files/Filip_Milojevic_CV.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="chip" href="https://scholar.google.com/citations?hl=en&user=UQQfJKcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a class=\"chip\" href=\"https://scholar.google.com/citations?hl=en&user=UQQfJKcAAAAJ\" target=\"_blank\" rel=\"noopener\">Google Scholar</a>
+          <a class=\"chip\" href=\"https://www.linkedin.com/in/filip-milojević-81557b228/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>
+          <a class=\"chip\" href=\"https://linktr.ee/filipmilojevic\" target=\"_blank\" rel=\"noopener\">Links</a>
+        </p>
+      </div>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="entries">
-        <div class="entry">
-          <h3>Non-User Utility and Market Power: The Case of Smartphones</h3>
-          <p class="meta">with Leonardo Bursztyn, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · <span class="muted">Working paper / NBER</span></p>
-          <div class="links">
-            <a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a>
-          </div>
-        </div>
-      </div>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a Research Specialist at the Normal Lab, working with Professor Leonardo Bursztyn. I was previously at LSE, where I obtained a Master's in Econometrics and Mathematical Economics (EME) and LMU Munich from where I hold a BSc in Economics. My work intersects behavioral IO, development economics, and political economy.
+      </p>
     </section>
 
     <section id="working-papers">
       <h2>Working papers</h2>
       <div class="entries">
         <div class="entry">
+          <h3>Non-User Utility and Market Power: The Case of Smartphones</h3>
+          <p class="meta">with Leonardo Bursztyn, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · NBER Working Paper</p>
+          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a></p>
+        </div>
+        <div class="entry">
           <h3>Measuring Markets for Network Goods</h3>
           <p class="meta">with Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · NBER Working Paper</p>
-          <div class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></div>
+          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></p>
         </div>
         <div class="entry">
           <h3>Algorithmic Amplification and Firm Dynamics</h3>
           <p class="meta">with Maksim Meinert</p>
-          <div class="links"><span class="chip">Draft forthcoming</span></div>
+          <p class="links"><span class="chip muted">Draft forthcoming</span></p>
         </div>
       </div>
     </section>
