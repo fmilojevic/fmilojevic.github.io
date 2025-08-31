@@ -25,7 +25,7 @@
     .nav a{color:inherit;opacity:.85;padding:6px 8px;border-radius:8px}
     .nav a:hover{opacity:1;background:color-mix(in srgb,var(--bg) 70%, var(--border))}
     .hero{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center;margin-top:10px}
-    .avatar{width:160px;height:auto;border-radius:12px;border:1px solid var(--border);object-fit:cover}
+    .avatar{width:160px;height:160px;border-radius:50%;border:1px solid var(--border);object-fit:cover}
     h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
     .subtitle{color:var(--muted);margin:4px 0 0}
     main section{margin-top:28px}
@@ -39,7 +39,7 @@
     .links{display:flex;gap:12px;flex-wrap:wrap}
     .chip{font-size:.95rem}
     footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
-    @media (max-width:720px){ .hero{grid-template-columns:1fr;}.avatar{width:100%;max-width:280px;justify-self:center} }
+    @media (max-width:720px){ .hero{grid-template-columns:1fr;}.avatar{width:140px;height:140px;justify-self:center} }
   </style>
 </head>
 <body>
