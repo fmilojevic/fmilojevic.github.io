@@ -7,51 +7,39 @@
   <meta name="description" content="Personal academic website of Filip Milojević" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <style>
-    /* ===== look & feel inspired by lucamlouzada.github.io: simple, readable, one-column ===== */
     :root{
       --bg:#ffffff; --text:#0f172a; --muted:#475569; --link:#0f66ff; --border:#e2e8f0; --maxw:760px;
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b1220; --text:#e6eef9; --muted:#9fb0ca; --link:#8bb3ff; --border:#1f2a44; }
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline;text-underline-offset:2px}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
-
-    /* header */
     header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
     .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .brand{margin-right:auto;font-weight:800;letter-spacing:.2px}
     .nav a{color:inherit;opacity:.85;padding:6px 8px;border-radius:8px}
     .nav a:hover{opacity:1;background:color-mix(in srgb,var(--bg) 70%, var(--border))}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;margin-top:10px}
-    .avatar{width:88px;height:88px;border-radius:12px;border:1px solid var(--border);object-fit:cover}
+    .hero{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center;margin-top:10px}
+    .avatar{width:160px;height:auto;border-radius:12px;border:1px solid var(--border);object-fit:cover}
     h1{margin:0 0 2px 0;font-size:clamp(1.6rem,2.5vw+1rem,2.2rem);letter-spacing:-.01em}
     .subtitle{color:var(--muted);margin:4px 0 0}
-
-    /* content */
     main section{margin-top:28px}
     h2{font-size:1.25rem;margin:0 0 10px 0}
     h3{font-size:1.05rem;margin:16px 0 6px}
     .muted{color:var(--muted)}
-
-    /* list of entries like Luca's: simple blocks */
     .entries{display:grid;gap:18px}
     .entry{padding:0 0 6px;border-bottom:1px solid var(--border)}
     .entry:last-child{border-bottom:none}
     .meta{color:var(--muted);font-size:.95rem;margin:4px 0 6px}
     .links{display:flex;gap:12px;flex-wrap:wrap}
     .chip{font-size:.95rem}
-
     footer{margin:40px 0 20px;color:var(--muted);font-size:.95rem}
-
-    @media (max-width:720px){ .hero{grid-template-columns:64px 1fr}.avatar{width:64px;height:64px} }
+    @media (max-width:720px){ .hero{grid-template-columns:1fr;}.avatar{width:100%;max-width:280px;justify-self:center} }
   </style>
 </head>
 <body>
@@ -68,9 +56,8 @@
   </header>
 
   <main id="top" class="wrap">
-    <!-- hero -->
     <section class="hero" aria-labelledby="name">
-      <img class="avatar" src="assets/profile.jpg" alt="Headshot of Filip Milojević" width="88" height="88" />
+      <img class="avatar" src="profile.jpg" alt="Photo of Filip Milojević" />
       <div>
         <h1 id="name">Filip Milojević</h1>
         <p class="subtitle">Predoctoral Research Fellow, University of Chicago</p>
@@ -81,7 +68,6 @@
       </div>
     </section>
 
-    <!-- about -->
     <section id="about">
       <h2>About</h2>
       <p>
@@ -89,7 +75,6 @@
       </p>
     </section>
 
-    <!-- publications (optional like Luca) -->
     <section id="publications">
       <h2>Publications</h2>
       <div class="entries">
@@ -98,22 +83,18 @@
           <p class="meta">with Leonardo Bursztyn, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · <span class="muted">Working paper / NBER</span></p>
           <p class="links">
             <a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a>
-            <a class="chip" href="#">Code</a>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- working papers -->
     <section id="working-papers">
       <h2>Working papers</h2>
       <div class="entries">
         <div class="entry">
           <h3>Measuring Markets for Network Goods</h3>
           <p class="meta">with Leonardo Bursztyn, Matthew Gentzkow, Rafael Jiménez‑Durán, Aaron Leonard, Christopher Roth · 2025 · NBER Working Paper</p>
-          <p class="links">
-            <a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a>
-          </p>
+          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></p>
         </div>
         <div class="entry">
           <h3>Algorithmic Amplification and Firm Dynamics</h3>
@@ -123,7 +104,6 @@
       </div>
     </section>
 
-    <!-- contact -->
     <section id="contact">
       <h2>Contact</h2>
       <ul>
