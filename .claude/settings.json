@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sI \"https://fmilojevic.github.io/files/CV_Filip_M.pdf\")",
+      "Bash(curl -sI \"https://fmilojevic.github.io/Files/CV_Filip_M.pdf\")"
+    ]
+  }
+}
