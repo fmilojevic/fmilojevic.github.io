@@ -36,6 +36,7 @@
       --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --dot: rgba(100, 130, 120, 0.22);
+      --sage:#5e8775; --sage-dark:#42664f;
     }
     @media (prefers-color-scheme: dark){
       :root{
@@ -45,6 +46,7 @@
         --surface:#111a2e;
         --icon:#cbd5e1; --accent:#1e293b;
         --dot: rgba(140, 175, 160, 0.16);
+        --sage:#6a9583; --sage-dark:#4a7561;
       }
     }
     *{box-sizing:border-box}
@@ -105,15 +107,21 @@
     .press a{font-style:italic;font-family:var(--serif)}
     .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .chip{
-      display:inline-flex;align-items:center;gap:6px;
+      display:inline-flex;align-items:center;gap:0;
       font-size:.82rem;font-weight:500;
       padding:4px 12px;
       border:1px solid var(--border-strong);border-radius:999px;
       color:var(--muted);background:transparent;
-      transition:all .15s ease;
+      transition:color .2s ease, background .2s ease, border-color .2s ease;
     }
-    .chip:hover{color:#fff;border-color:var(--link);background:var(--link);text-decoration:none}
-    .chip svg{width:12px;height:12px}
+    .chip:hover{color:#fff;border-color:var(--sage-dark);background:var(--sage);text-decoration:none}
+    .chip-arrow{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:0;overflow:hidden;
+      transition:width .22s ease, margin-left .22s ease;
+    }
+    .chip-arrow svg{width:11px;height:11px;display:block;flex-shrink:0}
+    .chip:hover .chip-arrow{width:11px;margin-left:5px}
 
     .news{display:grid;gap:14px}
     .news-item{display:grid;grid-template-columns:88px 1fr;gap:16px;font-size:.96rem;align-items:baseline;line-height:1.6}
@@ -188,26 +196,26 @@
         <div class="entry">
           <h3>The Attention Economy</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="http://www.aleximas.com" target="_blank" rel="noopener">Alex Imas</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
-          <p class="meta venue">Draft forthcoming</p>
+          <p class="meta venue">Draft · May 2026</p>
         </div>
         <div class="entry">
           <h3>Why Bans Fail: Tipping Points and Australia's Social Media Ban</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://angeladuckworth.com" target="_blank" rel="noopener">Angela Duckworth</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a>, <a href="https://hls.harvard.edu/faculty/cass-r-sunstein/" target="_blank" rel="noopener">Cass Sunstein</a></p>
           <p class="meta venue">2026 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35162/w35162.pdf" target="_blank" rel="noopener">PDF</a></p>
+          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35162/w35162.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
           <p class="press">Featured in <a href="https://www.nytimes.com/2026/05/08/opinion/social-media-teens-phones-australia-solutions.html" target="_blank" rel="noopener">The New York Times</a>, <a href="https://marginalrevolution.com/marginalrevolution/2026/05/the-social-media-ban-in-australia-how-is-it-going.html" target="_blank" rel="noopener">Marginal Revolution</a></p>
         </div>
         <div class="entry">
           <h3>Measuring Markets for Network Goods</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://matthewgentzkow.com" target="_blank" rel="noopener">Matthew Gentzkow</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
           <p class="meta venue">2025 · Review of Economic Studies, Revise and resubmit</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33901" target="_blank" rel="noopener">PDF</a></p>
+          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33901/w33901.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
         </div>
         <div class="entry">
           <h3>Non-User Utility and Market Power: The Case of Smartphones</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
           <p class="meta venue">2025 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/papers/w33642" target="_blank" rel="noopener">PDF</a></p>
+          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33642/w33642.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
           <p class="press">Featured in <a href="https://www.economist.com/finance-and-economics/2025/04/24/what-price-cool-31-a-month-according-to-students" target="_blank" rel="noopener">The Economist</a></p>
         </div>
       </div>
