@@ -20,6 +20,48 @@
   <meta name="twitter:description" content="Incoming PhD student in Economics at MIT." />
   <meta name="twitter:image" content="https://filipmilojevic.com/assets/profile.jpg" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Filip Milojević",
+    "givenName": "Filip",
+    "familyName": "Milojević",
+    "url": "https://filipmilojevic.com",
+    "image": "https://filipmilojevic.com/assets/profile.jpg",
+    "email": "mailto:fmiloje@mit.edu",
+    "jobTitle": "Research Specialist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Normal Lab, University of Chicago",
+      "url": "https://thenormallab.uchicago.edu/about/"
+    },
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "Massachusetts Institute of Technology",
+      "url": "https://economics.mit.edu"
+    },
+    "alumniOf": [
+      {"@type": "EducationalOrganization", "name": "London School of Economics and Political Science", "url": "https://www.lse.ac.uk"},
+      {"@type": "EducationalOrganization", "name": "Ludwig-Maximilians-Universität München", "url": "https://www.lmu.de"},
+      {"@type": "EducationalOrganization", "name": "University of Warwick", "url": "https://warwick.ac.uk"}
+    ],
+    "knowsAbout": [
+      "Behavioral Economics",
+      "Industrial Organization",
+      "Development Economics",
+      "Digital Platforms",
+      "Public Policy",
+      "Machine Intelligence"
+    ],
+    "sameAs": [
+      "https://scholar.google.com/citations?hl=en&user=UQQfJKcAAAAJ",
+      "https://github.com/fmilojevic",
+      "https://www.linkedin.com/in/filip-milojević-81557b228/"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -109,6 +151,32 @@
     .press{margin-top:6px;font-size:.9rem;color:var(--muted)}
     .press a,.press em{font-style:italic;font-family:var(--serif)}
     .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .abstract{margin-top:10px}
+    .abstract summary{
+      cursor:pointer;list-style:none;user-select:none;
+      display:inline-flex;align-items:center;gap:7px;
+      color:var(--muted);
+      font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+      padding:2px 0;
+      transition:color .12s ease;
+    }
+    .abstract summary::-webkit-details-marker{display:none}
+    .abstract summary::before{
+      content:"+";font-family:var(--mono);font-weight:700;font-size:.9rem;line-height:1;
+      display:inline-block;width:.7em;text-align:center;
+      transition:transform .2s ease;
+    }
+    .abstract[open] summary::before{content:"−"}
+    .abstract summary:hover{color:var(--text)}
+    .abstract-body{
+      margin-top:12px;
+      padding:12px 16px;
+      border-left:2px solid var(--border-strong);
+      color:var(--muted);
+      font-size:.92rem;line-height:1.65;
+    }
+    .abstract-body p{margin:0 0 10px 0}
+    .abstract-body p:last-child{margin-bottom:0}
     .chip{
       display:inline-flex;align-items:center;gap:0;
       font-size:.82rem;font-weight:500;
@@ -164,7 +232,7 @@
       <div>
         <h1 id="name">Filip Milojević</h1>
         <p class="subtitle">Research Specialist, Normal Lab · University of Chicago</p>
-        <p class="affiliations">Incoming PhD, MIT Economics · ERP Fellow (Fall 2026)</p>
+        <p class="affiliations">Incoming PhD, MIT Economics · ERP Research Fellow (2026/27)</p>
         <div class="social">
           <a href="mailto:fmiloje@mit.edu" title="Email" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5.5Zm2.5-.5a.5.5 0 0 0-.5.5v.36l8 5.14 8-5.14V5.5a.5.5 0 0 0-.5-.5h-15ZM20 8.62l-7.53 4.84a1 1 0 0 1-1.06 0L4 8.62V19h16V8.62Z"/></svg>
@@ -188,7 +256,7 @@
         I am a Research Specialist at the <a href="https://thenormallab.uchicago.edu/about/" target="_blank" rel="noopener">Normal Lab</a>, University of Chicago, and an incoming PhD student in Economics at MIT. I previously obtained an MSc in Econometrics and Mathematical Economics from LSE and a BSc in Economics from LMU Munich.
       </p>
       <p>
-        I study how digital platforms and machine intelligence interact with human behavior and decisions, with applications to industrial organization and development.
+        I study how digital platforms and machine intelligence interact with human behavior and decisions. My work has applications to industrial organization, development, and public policy.
       </p>
       <p>You can find my full <a href="files/CV_Filip_M.pdf" target="_blank" rel="noopener">CV here</a>.</p>
       <p>I've had the privilege of advising and mentoring several younger students over the past years. If you have any questions regarding studying Economics, the EME, being a Pre-Doc, pursuing Econ Grad School, or just want to connect, don't hesitate to reach out!</p>
@@ -201,12 +269,20 @@
           <h3>Negative Network Goods</h3>
           <p class="meta">with E. Hadj Ammar</p>
           <p class="meta venue">Draft forthcoming</p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-body"><p>[Abstract to be added — send text and I'll fill in.]</p></div>
+          </details>
         </div>
         <div class="entry">
           <h3>Non-User Externalities</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://janfasnacht.com" target="_blank" rel="noopener">Jan Fasnacht</a>, <a href="https://eml.berkeley.edu/~bhandel/" target="_blank" rel="noopener">Benjamin Handel</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a>, <a href="https://hls.harvard.edu/faculty/cass-r-sunstein/" target="_blank" rel="noopener">Cass Sunstein</a></p>
           <p class="meta venue">2026 · NBER Working Paper</p>
           <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35279/w35279.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-body"><p>[Abstract to be added — send text and I'll fill in.]</p></div>
+          </details>
         </div>
         <div class="entry">
           <h3>Tipping Points and Australia's Social Media Ban</h3>
@@ -214,6 +290,10 @@
           <p class="meta venue">2026 · NBER Working Paper</p>
           <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35162/w35162.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
           <p class="press">Featured in <a href="https://www.nytimes.com/2026/05/08/opinion/social-media-teens-phones-australia-solutions.html" target="_blank" rel="noopener">The New York Times</a>, <a href="https://www.faz.net/aktuell/wirtschaft/wirtschaftswissen/social-media-verbot-in-australien-die-coolen-bleiben-online-accg-200822182.html" target="_blank" rel="noopener">Frankfurter Allgemeine Zeitung</a> (op-ed), <a href="https://marginalrevolution.com/marginalrevolution/2026/05/the-social-media-ban-in-australia-how-is-it-going.html" target="_blank" rel="noopener">Marginal Revolution</a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-body"><p>[Abstract to be added — send text and I'll fill in.]</p></div>
+          </details>
         </div>
         <div class="entry">
           <h3>Non-User Externalities and Market Power</h3>
@@ -221,6 +301,10 @@
           <p class="meta venue">2025 · NBER Working Paper</p>
           <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33642/w33642.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
           <p class="press">Featured in <a href="https://www.economist.com/finance-and-economics/2025/04/24/what-price-cool-31-a-month-according-to-students" target="_blank" rel="noopener">The Economist</a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-body"><p>[Abstract to be added — send text and I'll fill in.]</p></div>
+          </details>
         </div>
       </div>
     </section>
@@ -233,6 +317,10 @@
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://matthewgentzkow.com" target="_blank" rel="noopener">Matthew Gentzkow</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
           <p class="meta"><em>Review of Economic Studies</em>, Forthcoming</p>
           <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33901/w33901.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-body"><p>[Abstract to be added — send text and I'll fill in.]</p></div>
+          </details>
         </div>
       </div>
     </section>
