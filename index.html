@@ -150,8 +150,8 @@
     .meta.venue{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:4px}
     .press{margin-top:6px;font-size:.9rem;color:var(--muted)}
     .press a,.press em{font-style:italic;font-family:var(--serif)}
-    .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .abstract{margin-top:10px}
+    .links{display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;margin-top:10px}
+    .abstract{display:contents}
     .abstract summary{
       cursor:pointer;list-style:none;user-select:none;
       display:inline-flex;align-items:center;gap:7px;
@@ -169,6 +169,7 @@
     .abstract[open] summary::before{content:"−"}
     .abstract summary:hover{color:var(--text)}
     .abstract-body{
+      flex-basis:100%;
       margin-top:12px;
       padding:12px 16px;
       border-left:2px solid var(--border-strong);
@@ -273,33 +274,39 @@
           <h3>Non-User Externalities</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://janfasnacht.com" target="_blank" rel="noopener">Jan Fasnacht</a>, <a href="https://eml.berkeley.edu/~bhandel/" target="_blank" rel="noopener">Benjamin Handel</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a>, <a href="https://hls.harvard.edu/faculty/cass-r-sunstein/" target="_blank" rel="noopener">Cass Sunstein</a></p>
           <p class="meta venue">2026 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35279/w35279.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-body"><p>We review an emerging literature on how non-user externalities—the benefits or harms that product adoption imposes differentially on non-users versus users—shape market outcomes. We first present a unified framework that distinguishes non-user externalities from network effects and classic externalities, such as pollution. A key distinction is that those harmed by classic externalities cannot mitigate harm by joining the externality-producing activity, whereas those harmed by negative non-user externalities can—simply by becoming users. This can expand the harm borne by remaining non-users, generating cascade dynamics that can culminate in product market traps: situations in which individuals would prefer the product not to exist, yet nonetheless choose to adopt it rather than remaining non-users. Using new survey evidence covering a wide range of product markets, we document that negative non-user externalities are pervasive, that the mechanisms behind them differ systematically across products, and that they generate adoption pressure on non-users. We then discuss how non-user externalities affect welfare analysis, firms' strategic incentives, and market structure. We conclude by discussing policy responses, including design regulation and collective coordination mechanisms.</p></div>
-          </details>
+          <div class="links">
+            <a class="chip" href="https://www.nber.org/system/files/working_papers/w35279/w35279.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <div class="abstract-body"><p>We review an emerging literature on how non-user externalities—the benefits or harms that product adoption imposes differentially on non-users versus users—shape market outcomes. We first present a unified framework that distinguishes non-user externalities from network effects and classic externalities, such as pollution. A key distinction is that those harmed by classic externalities cannot mitigate harm by joining the externality-producing activity, whereas those harmed by negative non-user externalities can—simply by becoming users. This can expand the harm borne by remaining non-users, generating cascade dynamics that can culminate in product market traps: situations in which individuals would prefer the product not to exist, yet nonetheless choose to adopt it rather than remaining non-users. Using new survey evidence covering a wide range of product markets, we document that negative non-user externalities are pervasive, that the mechanisms behind them differ systematically across products, and that they generate adoption pressure on non-users. We then discuss how non-user externalities affect welfare analysis, firms' strategic incentives, and market structure. We conclude by discussing policy responses, including design regulation and collective coordination mechanisms.</p></div>
+            </details>
+          </div>
         </div>
         <div class="entry">
           <h3>Tipping Points and Australia's Social Media Ban</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://angeladuckworth.com" target="_blank" rel="noopener">Angela Duckworth</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a>, <a href="https://hls.harvard.edu/faculty/cass-r-sunstein/" target="_blank" rel="noopener">Cass Sunstein</a></p>
           <p class="meta venue">2026 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w35162/w35162.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
+          <div class="links">
+            <a class="chip" href="https://www.nber.org/system/files/working_papers/w35162/w35162.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <div class="abstract-body"><p>In December 2025, Australia became the first country to ban under-16s from major social media platforms, a policy under consideration in more than a dozen countries. Because individually complying with the ban when others do not comply is socially costly, an easily circumvented ban may work only if compliance crosses a tipping point. Surveying Australian teenagers four months after implementation, we found that fewer than one in three 14–15-year-olds were in compliance with the ban. However, teenagers reported requiring two out of three peers to comply before complying themselves and, in addition, perceived compliers as less popular. These forces predict erosion, and indeed, two months later, compliance had fallen to about one in twenty. Reducing social media use in adolescents likely requires supplementing bans with individual incentives and social norms interventions.</p></div>
+            </details>
+          </div>
           <p class="press">Featured in <a href="https://www.nytimes.com/2026/05/08/opinion/social-media-teens-phones-australia-solutions.html" target="_blank" rel="noopener">The New York Times</a>, <a href="https://www.faz.net/aktuell/wirtschaft/wirtschaftswissen/social-media-verbot-in-australien-die-coolen-bleiben-online-accg-200822182.html" target="_blank" rel="noopener">Frankfurter Allgemeine Zeitung</a> (op-ed), <a href="https://marginalrevolution.com/marginalrevolution/2026/05/the-social-media-ban-in-australia-how-is-it-going.html" target="_blank" rel="noopener">Marginal Revolution</a></p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-body"><p>In December 2025, Australia became the first country to ban under-16s from major social media platforms, a policy under consideration in more than a dozen countries. Because individually complying with the ban when others do not comply is socially costly, an easily circumvented ban may work only if compliance crosses a tipping point. Surveying Australian teenagers four months after implementation, we found that fewer than one in three 14–15-year-olds were in compliance with the ban. However, teenagers reported requiring two out of three peers to comply before complying themselves and, in addition, perceived compliers as less popular. These forces predict erosion, and indeed, two months later, compliance had fallen to about one in twenty. Reducing social media use in adolescents likely requires supplementing bans with individual incentives and social norms interventions.</p></div>
-          </details>
         </div>
         <div class="entry">
           <h3>Non-User Externalities and Market Power</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
           <p class="meta venue">2025 · NBER Working Paper</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33642/w33642.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
+          <div class="links">
+            <a class="chip" href="https://www.nber.org/system/files/working_papers/w33642/w33642.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <div class="abstract-body"><p>Firms can increase the demand for their products and consolidate their market power by increasing their users' utility but also by strategically creating negative externalities for competing products' users. We study this mechanism in the smartphone market, analyzing Apple's strategy of marking messages to Android users with distinctive "green bubbles." In surveys with U.S. college students, we show that green bubbles are widely stigmatized and that a majority of both iPhone and Android users would prefer they were removed. An incentivized deactivation experiment reveals that iPhone users have a significant willingness to pay to prevent their messages from appearing as green bubbles on other iPhones. Then, we examine the market implications and document that removing green bubbles substantially increases respondents' likelihood of choosing an Android over an iPhone. Finally, we document the prevalence of non-user externalities and analyze their implications across a variety of product features.</p></div>
+            </details>
+          </div>
           <p class="press">Featured in <a href="https://www.economist.com/finance-and-economics/2025/04/24/what-price-cool-31-a-month-according-to-students" target="_blank" rel="noopener">The Economist</a></p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-body"><p>Firms can increase the demand for their products and consolidate their market power by increasing their users' utility but also by strategically creating negative externalities for competing products' users. We study this mechanism in the smartphone market, analyzing Apple's strategy of marking messages to Android users with distinctive "green bubbles." In surveys with U.S. college students, we show that green bubbles are widely stigmatized and that a majority of both iPhone and Android users would prefer they were removed. An incentivized deactivation experiment reveals that iPhone users have a significant willingness to pay to prevent their messages from appearing as green bubbles on other iPhones. Then, we examine the market implications and document that removing green bubbles substantially increases respondents' likelihood of choosing an Android over an iPhone. Finally, we document the prevalence of non-user externalities and analyze their implications across a variety of product features.</p></div>
-          </details>
         </div>
       </div>
     </section>
@@ -311,11 +318,13 @@
           <h3>Measuring Markets for Network Goods</h3>
           <p class="meta">with <a href="https://home.uchicago.edu/bursztyn/" target="_blank" rel="noopener">Leonardo Bursztyn</a>, <a href="https://matthewgentzkow.com" target="_blank" rel="noopener">Matthew Gentzkow</a>, <a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jiménez‑Durán</a>, <a href="https://aaronjleonard.github.io" target="_blank" rel="noopener">Aaron Leonard</a>, <a href="https://sites.google.com/site/chrisrotheconomics" target="_blank" rel="noopener">Christopher Roth</a></p>
           <p class="meta"><em>Review of Economic Studies</em>, Forthcoming</p>
-          <p class="links"><a class="chip" href="https://www.nber.org/system/files/working_papers/w33901/w33901.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-body"><p>Market definition is challenging in settings with network effects, where substitution patterns depend on changes in network size. We study these effects in the context of social media. We conduct an incentivized experiment comparing substitution in response to a proposed U.S. TikTok ban, in which all users simultaneously leave the app, with substitution when only a single user deactivates. We find substantially higher valuations of alternative social apps under a collective TikTok ban than under an individual TikTok deactivation. Mechanism evidence shows that both anticipated content-supply shifts and social coordination partly explain the wedge, with the relative importance of each channel varying across platforms. We then show that a collective time limit challenge, where peers jointly reduce TikTok and Instagram use, leads to more time spent on alternative social apps than has been observed in prior individual deactivation experiments. Together, our results suggest that individual-level substitution estimates can be an unreliable guide to market definition for network goods.</p></div>
-          </details>
+          <div class="links">
+            <a class="chip" href="https://www.nber.org/system/files/working_papers/w33901/w33901.pdf" target="_blank" rel="noopener">PDF<span class="chip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <div class="abstract-body"><p>Market definition is challenging in settings with network effects, where substitution patterns depend on changes in network size. We study these effects in the context of social media. We conduct an incentivized experiment comparing substitution in response to a proposed U.S. TikTok ban, in which all users simultaneously leave the app, with substitution when only a single user deactivates. We find substantially higher valuations of alternative social apps under a collective TikTok ban than under an individual TikTok deactivation. Mechanism evidence shows that both anticipated content-supply shifts and social coordination partly explain the wedge, with the relative importance of each channel varying across platforms. We then show that a collective time limit challenge, where peers jointly reduce TikTok and Instagram use, leads to more time spent on alternative social apps than has been observed in prior individual deactivation experiments. Together, our results suggest that individual-level substitution estimates can be an unreliable guide to market definition for network goods.</p></div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
